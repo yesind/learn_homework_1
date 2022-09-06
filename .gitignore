@@ -121,3 +121,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# my ignore
+settings.py
+README.md
+bot.log
+.editorconfig
+__pycache__
+bot.py
+.DS_Store
