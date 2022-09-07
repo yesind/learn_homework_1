@@ -15,25 +15,23 @@
 
 """
 def string_parsing(str1,str2):
-    if (isinstance(str1, str) and isinstance(str2, str)) == False:
+    if not (isinstance(str1, str) and isinstance(str2, str)):
         return 0
     elif str1 == str2:
         return 1
-    elif str1 != str2 and len(str1) > len(str2) and str2 == "learn": # сделал для проверки длинна больше и второе слово learn
-        return f'{2} {3}'
-    elif str1 != str2 and len(str1) > len(str2):
+    elif len(str1) > len(str2) and str2 == "learn": # сделал для проверки длинна больше и второе слово learn
+        return 4
+    elif  len(str1) > len(str2):
         return 2
-    elif str1 != str2 and str2 == "learn":
+    elif str2 == "learn":
         return 3
     
     
     
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
+   
+   
     print(string_parsing("abc", 2))
     print(string_parsing("abc","abc"))
     print(string_parsing("abcd","abc"))

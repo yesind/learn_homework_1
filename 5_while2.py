@@ -27,11 +27,11 @@ questions_and_answers = {"Как дела?": "Хорошо!",
 def ask_user(answers_dict):
    
     s=input("Введите ваш вопрос: ")
-    while s in answers_dict.keys():
-      print(answers_dict[s])
-      s=input("Введите ваш вопрос: ")
+    while s in answers_dict:
+        print(answers_dict[s])
+        s=input("Введите ваш вопрос: ")
     else:
-      print("Спасибо за беседу")
+        print("Спасибо за беседу")
     
 if __name__ == "__main__":
     ask_user(questions_and_answers)

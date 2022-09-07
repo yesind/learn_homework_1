@@ -17,10 +17,7 @@
 """
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
+  
     sales = [
     {'product': 'iPhone 12', 'items_sold': [363, 500, 224, 358, 480, 476, 470, 216, 270, 388, 312, 186]}, 
     {'product': 'Xiaomi Mi11', 'items_sold': [317, 267, 290, 431, 211, 354, 276, 526, 141, 453, 510, 316]},
@@ -30,14 +27,12 @@ def main():
     print()
     print("Cуммарное количество продаж для каждого товара")
     for i in sales:
-      print(f"{i['product']} {sum(i['items_sold'])}")
-    for j in i['items_sold']:
-        list_of_all.append(j)   
-    print()
-
+        print(f"{i['product']} {sum(i['items_sold'])}")
+        list_of_all+=i['items_sold']
+    print()   
     print("Cреднее количество продаж для каждого товара")
     for i in sales:
-      print(f"{i['product']} {round(sum(i['items_sold'])/len(i['items_sold']),2)}")
+        print(f"{i['product']} {round(sum(i['items_sold'])/len(i['items_sold']),2)}")
     print()
 
     print("Cуммарное количество продаж всех товаров\n", sum(list_of_all))

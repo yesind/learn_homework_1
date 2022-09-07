@@ -123,6 +123,8 @@ dmypy.json
 .pyre/
 
 # my ignore
+planet.py
+7_exception2.py
 settings.py
 README.md
 bot.log

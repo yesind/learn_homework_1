@@ -29,11 +29,15 @@ def greet_user(update, context):
 
 def planet_constellation(update, context):
     logging.info('Вызвана команда /planet')
-    planet=list(map(str,update.message.text.split()))[1]
+    planet=update.message.text.split()[1]
     logging.info(planet)
-    body = getattr(ephem, planet)(date.today())
-    constellation = ephem.constellation(body)
-    update.message.reply_text(f'{planet} сегодня в созвездии {constellation}')
+    try:
+        body = getattr(ephem, planet)(date.today())
+        constellation = ephem.constellation(body)
+        update.message.reply_text(f'{planet} сегодня в созвездии {constellation}')
+    except AttributeError:
+        update.message.reply_text('Вы указали название планеты некорректно. Пример корректного ввода:/planet Mars')
+        
 
 def talk_to_me(update, context):
     user_text = update.message.text 
