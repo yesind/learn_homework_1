@@ -1,17 +1,3 @@
-"""
-Домашнее задание №1
-
-Использование библиотек: ephem
-
-* Установите модуль ephem
-* Добавьте в бота команду /planet, которая будет принимать на вход
-  название планеты на английском, например /planet Mars
-* В функции-обработчике команды из update.message.text получите
-  название планеты (подсказка: используйте .split())
-* При помощи условного оператора if и ephem.constellation научите
-  бота отвечать, в каком созвездии сегодня находится планета.
-
-"""
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import settings
@@ -36,7 +22,7 @@ def planet_constellation(update, context):
         constellation = ephem.constellation(body)
         update.message.reply_text(f'{planet} сегодня в созвездии {constellation}')
     except AttributeError:
-        update.message.reply_text('Вы указали название планеты некорректно. Пример корректного ввода:/planet Mars')
+        update.message.reply_text("Вы указали название планеты некорректно. Небесные объекты о которых можно узнать:'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto', 'Sun', 'Moon'. Пример корректного ввода:/planet Mars")
         
 
 def talk_to_me(update, context):
@@ -59,4 +45,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

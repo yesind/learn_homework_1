@@ -1,6 +1,6 @@
 def find_person(name):
     name_list = ['Вася', 'Маша', 'Петя', 'Валера', 'Саша', 'Даша']
-    while len(name_list)!=0:
+    while name_list:
         if name_list[0]!= name:
             name_list.pop(0)
         else:

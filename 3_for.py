@@ -24,19 +24,16 @@ def main():
     {'product': 'Samsung Galaxy 21', 'items_sold': [343, 390, 238, 437, 214, 494, 441, 518, 212, 288, 272, 247]},
     ]
     list_of_all=[]
+    M_COUNT=12
     print()
-    print("Cуммарное количество продаж для каждого товара")
     for i in sales:
-        print(f"{i['product']} {sum(i['items_sold'])}")
+        print(f"Cуммарное количество продаж {i['product']} составляет {sum(i['items_sold'])}")
+        print(f"Cреднее количество продаж {i['product']} в месяц составляет {round(sum(i['items_sold'])/len(i['items_sold']),2)}")
+        print() 
         list_of_all+=i['items_sold']
     print()   
-    print("Cреднее количество продаж для каждого товара")
-    for i in sales:
-        print(f"{i['product']} {round(sum(i['items_sold'])/len(i['items_sold']),2)}")
-    print()
-
     print("Cуммарное количество продаж всех товаров\n", sum(list_of_all))
-    print("Cреднее количество продаж всех товаров\n", round(sum(list_of_all)/len(list_of_all),2))
+    print("Cреднее количество продаж всех товаров\n", round(sum(list_of_all)/M_COUNT,2))
     
 if __name__ == "__main__":
     main()
