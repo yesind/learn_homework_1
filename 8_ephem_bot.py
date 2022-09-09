@@ -22,8 +22,10 @@ def planet_constellation(update, context):
         constellation = ephem.constellation(body)
         update.message.reply_text(f'{planet} сегодня в созвездии {constellation}')
     except AttributeError:
-        update.message.reply_text("Вы указали название планеты некорректно. Небесные объекты о которых можно узнать:'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto', 'Sun', 'Moon'. Пример корректного ввода:/planet Mars")
-        
+        update.message.reply_text("Вы указали название планеты некорректно.")
+        update.message.reply_text("Небесные объекты о которых можно узнать:")
+        update.message.reply_text("'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto', 'Sun', 'Moon'")
+        update.message.reply_text("Пример корректного ввода:/planet Mars")
 
 def talk_to_me(update, context):
     user_text = update.message.text 

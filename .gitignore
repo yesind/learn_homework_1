@@ -123,7 +123,9 @@ dmypy.json
 .pyre/
 
 # my ignore
+1_if1.py
 2_if2.py
+3_for.py
 4_while1.py
 5_while2.py
 6_exception1.py

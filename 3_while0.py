@@ -4,8 +4,7 @@ def find_person(name):
         if name_list[0]!= name:
             name_list.pop(0)
         else:
-            return f"{name_list[0]} нашелся/сь"
-            break                         
+            return f"{name_list[0]} нашелся/сь"                        
     else:
         return f"{name} не нашелся/сь"
       
